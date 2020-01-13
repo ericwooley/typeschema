@@ -2,8 +2,9 @@ import * as find from 'find'
 import { join } from 'path'
 import debug from 'debug'
 import { generateValidator } from './generateValdiator'
-const log = debug('typeschema')
+export const log = debug('typeschema')
 const argv = process.argv.slice(2)
+console.log({ argv: process.argv })
 const dirs = argv.filter(arg => arg.indexOf('-') !== 0)
 const flags = argv.filter(arg => arg.indexOf('-') === 0)
 function extractOption(option: string) {
@@ -11,7 +12,7 @@ function extractOption(option: string) {
   if (!val) throw new Error('malformed flag: ' + option)
   return val
 }
-const defaultPattern = '--pattern="\\.schema\\.(json|yml)"'
+const defaultPattern = '--pattern=.*schema\\.(json|yml)'
 const options = {
   dirs: dirs.length ? dirs : ['.'],
   flags,
@@ -26,9 +27,10 @@ async function main() {
     .map(dir => join(process.cwd(), dir))
     .forEach(dir => {
       log('checking directory', dir)
+      console.log(new RegExp(options.pattern))
       find.file(new RegExp(options.pattern), dir, function(files) {
         log('---->', files)
-        files.forEach(generateValidator)
+        files.forEach(generateValidator({ throwError: !options.watch }))
       })
     })
 }

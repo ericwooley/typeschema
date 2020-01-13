@@ -1,0 +1,16 @@
+name: publish
+on:
+  push:
+    branches:
+      - '*'
+jobs:
+  publish-job:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: primer/publish@master
+        env:
+          NPM_REGISTRY_URL: registry.npmjs.org
+          GITHUB_TOKEN: ${{ secrets.GITHUB_ACCESS_TOKEN }}
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+          args: '--dry-run'

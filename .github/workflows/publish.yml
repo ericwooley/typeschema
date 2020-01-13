@@ -7,7 +7,7 @@ jobs:
   publish-job:
     runs-on: ubuntu-latest
     steps:
-      - run: echo $PWD && ls -al .
+      - run: echo $PWD && ls -al ..
       - uses: primer/publish@master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_ACCESS_TOKEN }}

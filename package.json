@@ -26,6 +26,8 @@
     "prebuild": "rimraf dist",
     "dev": "DEBUG='typeschemagen' yarn ts-node --project ./tsconfig.common.json  ./src/typeschemagen.ts ./testFiles",
     "build": "tsc && tsc --project tsconfig.common.json",
+    "postbuild": "chmod +x ./dist/umd/typeschemagen.js",
+    "prepublish": "yarn build",
     "test": "jest"
   },
   "jest": {

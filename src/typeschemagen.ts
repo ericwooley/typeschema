@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import * as find from 'find'
 import { join } from 'path'
 import debug from 'debug'

@@ -6,6 +6,9 @@
   "main": "dist/umd/typeschemagen.js",
   "module": "dist/module/typeschemagen.js",
   "typings": "dist/types/typeschemagen.d.ts",
+  "bin": {
+    "tsg": "dist/umd/typeschemagen.js"
+  },
   "files": [
     "dist"
   ],

@@ -25,7 +25,7 @@
     "lint": "tslint  --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
     "prebuild": "rimraf dist",
     "dev": "DEBUG='typeschemagen' yarn ts-node --project ./tsconfig.common.json  ./src/typeschemagen.ts ./testFiles",
-    "build": "tsc",
+    "build": "tsc && tsc --project tsconfig.common.json",
     "test": "jest"
   },
   "jest": {

@@ -22,106 +22,46 @@
     "lint": "tslint  --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
     "prebuild": "rimraf dist",
     "dev": "DEBUG='typeschemagen' yarn ts-node --project ./tsconfig.common.json  ./src/typeschemagen.ts ./testFiles",
-    "build": "tsc && tsc",
-    "start": "rollup -c rollup.config.ts -w",
-    "test": "jest --coverage",
-    "test:watch": "jest --coverage --watch",
-    "test:prod": "npm run lint && npm run test -- --no-cache",
-    "deploy-docs": "ts-node tools/gh-pages-publish",
-    "report-coverage": "cat ./coverage/lcov.info | coveralls",
-    "commit": "git-cz",
-    "semantic-release": "semantic-release",
-    "semantic-release-prepare": "ts-node tools/semantic-release-prepare",
-    "precommit": "lint-staged",
-    "travis-deploy-once": "travis-deploy-once"
-  },
-  "lint-staged": {
-    "{src,test}/**/*.ts": [
-      "prettier --write",
-      "git add"
-    ]
-  },
-  "config": {
-    "commitizen": {
-      "path": "node_modules/cz-conventional-changelog"
-    }
+    "build": "tsc",
+    "test": "jest"
   },
   "jest": {
     "transform": {
       ".(ts|tsx)": "ts-jest"
     },
     "testEnvironment": "node",
-    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "testRegex": "(.*|\\.(test|spec))\\.(ts|tsx|js)$",
     "moduleFileExtensions": [
       "ts",
       "tsx",
       "js"
-    ],
-    "coveragePathIgnorePatterns": [
-      "/node_modules/",
-      "/test/"
-    ],
-    "coverageThreshold": {
-      "global": {
-        "branches": 90,
-        "functions": 95,
-        "lines": 95,
-        "statements": 95
-      }
-    },
-    "collectCoverageFrom": [
-      "src/*.{js,ts}"
     ]
   },
   "prettier": {
     "semi": false,
     "singleQuote": true
   },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
   "peerDependencies": {
     "ajv": "^6"
   },
   "devDependencies": {
-    "@commitlint/cli": "^8.3.4",
-    "@commitlint/config-conventional": "^8.3.4",
     "@types/debug": "^4.1.5",
     "@types/find": "^0.2.1",
     "@types/jest": "^24.0.25",
     "@types/node": "^13.1.6",
     "@types/yaml": "^1.2.0",
     "ajv": "^6.10.2",
-    "colors": "^1.4.0",
-    "commitizen": "^4.0.3",
-    "coveralls": "^3.0.9",
-    "cross-env": "^6.0.3",
-    "cz-conventional-changelog": "^3.0.2",
-    "husky": "^4.0.6",
     "jest": "^24.9.0",
     "jest-config": "^24.9.0",
-    "lint-staged": "^9.5.0",
-    "lodash.camelcase": "^4.3.0",
     "prettier": "^1.19.1",
     "prompt": "^1.0.0",
-    "replace-in-file": "^5.0.2",
     "rimraf": "^3.0.0",
-    "rollup": "^1.29.0",
-    "rollup-plugin-commonjs": "^10.1.0",
-    "rollup-plugin-json": "^4.0.0",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-sourcemaps": "^0.5.0",
-    "semantic-release": "^16.0.1",
     "shelljs": "^0.8.3",
-    "travis-deploy-once": "^5.0.11",
     "ts-jest": "^24.3.0",
     "ts-node": "^8.6.1",
     "tslint": "^5.20.1",
     "tslint-config-prettier": "^1.18.0",
     "tslint-config-standard": "^9.0.0",
-    "typedoc": "^0.15.8",
     "typescript": "^3.7.4"
   },
   "dependencies": {
@@ -130,7 +70,6 @@
     "find": "^0.3.0",
     "json-schema-to-typescript": "^8.0.0",
     "pascalcase": "^1.0.0",
-    "rollup-plugin-babel": "^4.3.3",
     "yaml": "^1.7.2"
   }
 }

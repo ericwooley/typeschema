@@ -1,6 +1,6 @@
 {
-  "name": "typeschemagengen",
-  "version": "0.0.2",
+  "name": "typeschemagen",
+  "version": "0.0.0",
   "description": "",
   "keywords": [],
   "main": "dist/umd/typeschemagen.js",

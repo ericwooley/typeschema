@@ -2,7 +2,7 @@ import * as find from 'find'
 import { join } from 'path'
 import debug from 'debug'
 import { generateValidator } from './generateValdiator'
-export const log = debug('typeschema')
+export const log = debug('typeschemagen')
 const argv = process.argv.slice(2)
 console.log({ argv: process.argv })
 const dirs = argv.filter(arg => arg.indexOf('-') !== 0)

@@ -1,11 +1,11 @@
 {
-  "name": "typeschema",
+  "name": "typeschemagengen",
   "version": "0.0.0",
   "description": "",
   "keywords": [],
-  "main": "dist/umd/typeschema.js",
-  "module": "dist/module/typeschema.js",
-  "typings": "dist/types/typeschema.d.ts",
+  "main": "dist/umd/typeschemagen.js",
+  "module": "dist/module/typeschemagen.js",
+  "typings": "dist/types/typeschemagen.d.ts",
   "files": [
     "dist"
   ],
@@ -21,7 +21,7 @@
   "scripts": {
     "lint": "tslint  --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
     "prebuild": "rimraf dist",
-    "dev": "DEBUG='typeschema' yarn ts-node --project ./tsconfig.common.json  ./src/typeschema.ts ./testFiles",
+    "dev": "DEBUG='typeschemagen' yarn ts-node --project ./tsconfig.common.json  ./src/typeschemagen.ts ./testFiles",
     "build": "tsc && tsc",
     "start": "rollup -c rollup.config.ts -w",
     "test": "jest --coverage",

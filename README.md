@@ -1,4 +1,4 @@
-# typeschema
+# typeschemagen
 JSON schema to typescript with validations
 
 # TypeScript library starter

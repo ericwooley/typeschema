@@ -1,6 +1,6 @@
 {
   "name": "typeschemagen",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "keywords": [],
   "main": "dist/umd/typeschemagen.js",
@@ -22,8 +22,8 @@
     "node": ">=6.0.0"
   },
   "np": {
-		"yarn": true
-	},
+    "yarn": true
+  },
   "scripts": {
     "lint": "tslint  --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
     "dev": "DEBUG='typeschemagen' yarn ts-node --project ./tsconfig.common.json  ./src/typeschemagen.ts ./testFiles",

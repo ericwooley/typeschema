@@ -22,8 +22,7 @@
     "node": ">=6.0.0"
   },
   "np": {
-		"yarn": true,
-		"contents": "dist"
+		"yarn": true
 	},
   "scripts": {
     "lint": "tslint  --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
@@ -33,14 +32,13 @@
     "postbuild": "chmod +x ./dist/umd/typeschemagen.js",
     "prepublish": "yarn build",
     "release": "np",
-    "test": "jest"
+    "test": "jest --passWithNoTests"
   },
   "jest": {
     "transform": {
       ".(ts|tsx)": "ts-jest"
     },
     "testEnvironment": "node",
-    "testRegex": "(.*|\\.(test|spec))\\.(ts|tsx|js)$",
     "moduleFileExtensions": [
       "ts",
       "tsx",

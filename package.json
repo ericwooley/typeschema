@@ -22,7 +22,7 @@
     "node": ">=6.0.0"
   },
   "np": {
-    "yarn": true
+    "yarn": false
   },
   "scripts": {
     "lint": "tslint  --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",

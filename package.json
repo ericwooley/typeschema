@@ -21,13 +21,18 @@
   "engines": {
     "node": ">=6.0.0"
   },
+  "np": {
+		"yarn": true,
+		"contents": "dist"
+	},
   "scripts": {
     "lint": "tslint  --project tsconfig.json -t codeFrame 'src/**/*.ts' 'test/**/*.ts'",
-    "prebuild": "rimraf dist",
     "dev": "DEBUG='typeschemagen' yarn ts-node --project ./tsconfig.common.json  ./src/typeschemagen.ts ./testFiles",
+    "prebuild": "rimraf dist",
     "build": "tsc && tsc --project tsconfig.common.json",
     "postbuild": "chmod +x ./dist/umd/typeschemagen.js",
     "prepublish": "yarn build",
+    "release": "np",
     "test": "jest"
   },
   "jest": {
@@ -74,6 +79,7 @@
     "debug": "^4.1.1",
     "find": "^0.3.0",
     "json-schema-to-typescript": "^8.0.0",
+    "np": "^6.1.0",
     "pascalcase": "^1.0.0",
     "yaml": "^1.7.2"
   }
